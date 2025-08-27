@@ -1,4 +1,6 @@
+import 'package:belajar_getx/app/modules/form_pendaftaran/views/form_pendaftaran_view.dart';
 import 'package:belajar_getx/app/modules/home/controllers/counter_controller.dart';
+import 'package:belajar_getx/app/modules/post/views/post_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -28,7 +30,33 @@ class CounterView extends GetView<CounterController> {
             ElevatedButton(
               onPressed: controller.kurang, 
               child: Text('kurang'),),
-              
+              SizedBox(height: 20,),
+            InkWell(
+              onTap: () {
+                Get.to(() => FormPendaftaranView());
+              },
+              child: Container(
+                padding: EdgeInsets.all(10),
+                color: Colors.blue,
+                child: Text(
+                  'Ke Form Pendaftaran',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+            InkWell(
+              onTap: () {
+                Get.to(() => PostView());
+              },
+              child: Container(
+                padding: EdgeInsets.all(10),
+                color: const Color.fromARGB(255, 243, 124, 33),
+                child: Text(
+                  'Ke Post',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            )
           ],
         ),
       ),
